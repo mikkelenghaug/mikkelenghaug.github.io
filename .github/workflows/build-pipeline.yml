@@ -7,7 +7,7 @@ on:
     branches: [ develop ]
 
 jobs:
-   add-beans:
+  add-beans:
   grind-beans:
     needs: add-beans
   brew-coffee:
