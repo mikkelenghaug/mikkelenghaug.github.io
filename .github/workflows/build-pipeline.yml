@@ -7,11 +7,6 @@ on:
     branches: [ develop ]
 
 jobs:
-  add-beans:
-  grind-beans:
-    needs: add-beans
-  brew-coffee:
-    needs: [add-beans, grind-beans]
   build:
     runs-on: ubuntu-latest
     steps:
@@ -43,6 +38,8 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Test
+        run: npm run test
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
